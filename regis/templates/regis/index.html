@@ -15,16 +15,18 @@
 	<link href="{% static 'regis/css/bootstrap.min.css' %}" rel="stylesheet">
 	<script src="{% static 'regis/js/bootstrap.min.js' %}"> </script>
 	<link href="{% static 'regis/style.css' %}" rel="stylesheet">
+	<link href="{% static 'regis/formstyle.css' %}" rel="stylesheet">
 </head>
 <body>
+
 	<header style="background-color: #0F636B;">
         <nav class="navbar navbar-expand-lg font-23xx">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="{% static 'regis/img/Logo CC Cup 22_color-orange.png' %}" alt="" width="100" height="50">
+                    <img src="{% static 'regis/img/Logo CC Cup 22_color-blank 1.webp' %}" alt="" height="50">
                 </a>
                 <a class="navbar-brand" href="#">
-                    <img src="{% static 'regis/img/logocc.PNG' %}" alt="" width="40" height="46">
+                    <img src="{% static 'regis/img/Logo CC White 1.webp' %}" alt="" height="46">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -56,7 +58,7 @@
         </nav>
     </header>
 
-    <div class="container main">
+	<div class="container main">
         <h1 class="bold center"> CC Cup 2022 Registration Form </h1>
 		<form class="container" action="{% url 'regis:data' field %}" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
@@ -70,7 +72,12 @@
 			</div>
 			<div class="form-group">
 				<label for="grade"> Kelas : </label> <label class="errortag"> {{ error_grade }} </label>
-				<select id="grade" name="grade" class="form-control">
+				<select class="form-control" id="grade" name="grade">
+				{% if current_grade == '' %}
+				<option readonly="true" selected value=""> -- select an option -- </option>
+				{% else %}
+				<option readonly="true" value=""> -- select an option -- </option>
+				{% endif %}
 				{% for grade in GRADE_CHOICES %}
 					{% if grade == current_grade %}
 						<option value="{{ grade }}" selected> {{ grade }} </option>
@@ -85,14 +92,18 @@
 				<input class="form-control" id="phone" type="text" name="phone" value="{{ current_phone }}"> <br>
 			</div>
 			<div class="form-group">
-				<label for="docs"> Link Dokumen : </label> <label class="errortag"> {{ error_docs }} </label>
-				<input class="form-control" id="docs" type="text" name="docs" value="{{ current_docs }}"> <br>
+				<label for="birthday"> Tanggal Lahir : </label> <label class="errortag"> {{ error_birthday }} </label>
+				<input class="form-control" id="birthday" type="date" name="birthday" value="{{ current_birthday }}"> <br>
+			</div>
+			<div class="form-group">
+				<label for="docs"> Dokumen : </label> <label class="errortag"> {{ error_docs }} </label>
+				<input class="form-control" id="docs" type="file" name="docs" value="{{ current_docs }}"> <br>
 			</div>
 			<input class="form-control submit" type="submit" value="OK">
 		</form>
-    </div>
+	</div>
 
-    <footer class="text-center text-lg-start text-muted">
+	<footer class="text-center text-lg-start text-muted">
         <section class="p-md-4 border-bottom">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
