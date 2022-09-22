@@ -17,7 +17,12 @@
         </div>
         <div class="form-group">
             <label for="grade"> Kelas : </label> <label class="errortag"> {{ error_grade }} </label>
-            <select id="grade" name="grade" class="form-control">
+            <select class="form-control" id="grade" name="grade">
+				{% if current_grade == '' %}
+				<option readonly="true" selected value=""> -- select an option -- </option>
+				{% else %}
+				<option readonly="true" value=""> -- select an option -- </option>
+				{% endif %}
             {% for grade in GRADE_CHOICES %}
                 {% if grade == current_grade %}
                     <option value="{{ grade }}" selected> {{ grade }} </option>
@@ -32,8 +37,12 @@
             <input class="form-control" id="phone" type="text" name="phone" value="{{ current_phone }}"> <br>
         </div>
         <div class="form-group">
-            <label for="docs"> Link Dokumen : </label> <label class="errortag"> {{ error_docs }} </label>
-            <input class="form-control" id="docs" type="text" name="docs" value="{{ current_docs }}"> <br>
+            <label for="birthday"> Tanggal Lahir : </label> <label class="errortag"> {{ error_birthday }} </label>
+            <input class="form-control" id="birthday" type="date" name="birthday" value="{{ current_birthday }}"> <br>
+        </div>
+        <div class="form-group">
+            <label for="docs"> Dokumen : </label> <label class="errortag"> {{ error_docs }} </label>
+            <input class="form-control" id="docs" type="file" name="docs" value="{{ current_docs }}"> <br>
         </div>
         <input class="form-control submit" type="submit" value="OK">
     </form>
