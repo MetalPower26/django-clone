@@ -14,13 +14,13 @@
 	<p> Sekolah : {{ team.school }} </p>
 	<p> Nama Ketua : {{ team.leader }} </p>
 	<p> Nomor Telepon : {{ team.phone }} </p>
-	<p> Email Ketua : {{ team.email }} </p>
-	<p> Link Dokumen : <a href="{{ team.docs }}" target="_blank"> {{ team.docs }} </a> </p>
+	<p> Dokumen : <a href="{{ team.docs.url }}" target="_blank"> {{ team.docs }} </a> </p>
 
 	<h2> Anggota Tim </h2>
 	{% for member in team.member_set.all %}
 		<p> Nama Anggota {{ forloop.counter }} : {{ member.name }} </p>
-		<p> Nomor Telepon Anggota {{ forloop.counter }} : {{ member.phone }} </p>
+		<p> Kelas : {{ participant.grade }} </p>
+		<p> Tanggal Lahir : {{ member.birthday }} </p>
 	{% endfor %}
 </body>
 </html>

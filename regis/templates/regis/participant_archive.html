@@ -14,8 +14,8 @@
 	<p> Sekolah : {{ participant.school }} </p>
 	<p> Kelas : {{ participant.grade }} </p>
 	<p> Nomor Telepon : {{ participant.phone }} </p>
-	<p> Email : {{ participant.email }} </p>
-	<p> Link Dokumen : <a href="{{ participant.docs }}" target="_blank"> {{ participant.docs }} </p>
+	<p> Tanggal Lahir : {{ participant.birthday }} </p>
+	<p> Dokumen : <a href="{{ participant.docs.url }}" target="_blank"> {{ participant.docs }} </p>
 	
 </body>
 </html>

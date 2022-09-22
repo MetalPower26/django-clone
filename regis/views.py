@@ -14,9 +14,11 @@ TEAM_FIELDS   = ['basket', 'voli']
 MIN_SIZE 	  = {'basket':5, 'voli':6}
 TEAM_SIZE     = {'basket':8, 'voli':9}
 
-label = {'name': 'Nama Peserta', 'school': 'Nama Sekolah', 'grade': 'kelas', 'phone': 'Nomor Telepon',
-		 'email': 'Email', 'docs': 'Dokumen', 'teamname': 'Nama Tim', 'leader': 'Nama Ketua', 
-		 'membername': 'Nama Anggota', 'memberphone': 'Nomor Anggota'}
+label = {'name': 'Nama Peserta', 'school': 'Nama Sekolah', 'grade': 'Kelas', 'phone': 'Nomor Telepon',
+		 'birthday': 'Tanggal Lahir', 'docs': 'Dokumen', 'teamname': 'Nama Tim', 'leader': 'Nama Ketua', 
+		 'membername': 'Nama Anggota', 'membergrade': 'Kelas', 'memberbirthday': 'Tanggal Lahir'}
+
+team_dict = {'name':'', 'grade':'', 'birthday':'', 'name_error':'', 'grade_error':'', 'birthday_error':''}
 
 def index(request, cfield):
 
@@ -25,12 +27,13 @@ def index(request, cfield):
 	parameters['field'] = cfield
 	
 	if cfield in SOLO_FIELDS:
+		parameters['current_grade'] = ''
 		return render(request, 'regis/index.html', parameters)
 	else:
 
 		parameters['TEAM'] = []
 		for number in range(1, TEAM_SIZE[cfield]):
-			parameters['TEAM'].append({'name':'', 'phone':''})
+			parameters['TEAM'].append(team_dict.copy())
 
 		return render(request, 'regis/team_index.html', parameters)
 
@@ -46,12 +49,11 @@ def TeamView(request, cfield):
 
 		# create a dictionary of important data from POST
 		data = {key:request.POST[key] for key in request.POST if key != csrftoken}
-		print(data)
 
 		# construct team
 		parameters['TEAM'] = []
 		for number in range(1, TEAM_SIZE[cfield]):
-			parameters['TEAM'].append({'name':'', 'phone':'', 'error_name': '', 'error_phone':''})
+			parameters['TEAM'].append(team_dict.copy())
 
 		for key in data:
 
@@ -62,8 +64,10 @@ def TeamView(request, cfield):
 
 				if datatype == 'membername':
 					parameters['TEAM'][number - 1]['name'] = data[key]
-				else:
-					parameters['TEAM'][number - 1]['phone'] = data[key]
+				elif datatype == 'membergrade':
+					parameters['TEAM'][number - 1]['grade'] = data[key]
+				elif datatype == 'memberbirthday':
+					parameters['TEAM'][number - 1]['birthday'] = data[key]
 
 			else:
 				curr = "current_" + key
@@ -81,8 +85,10 @@ def TeamView(request, cfield):
 				if data[key] == '' and number <= MIN_SIZE[cfield]:
 					if datatype == 'membername':
 						parameters['TEAM'][number - 1]['error_name'] = label[datatype] + " tidak bisa kosong"
-					elif datatype == 'memberphone':
-						parameters['TEAM'][number - 1]['error_phone'] = label[datatype] + " tidak bisa kosong"
+					elif datatype == 'membergrade':
+						parameters['TEAM'][number - 1]['error_grade'] = label[datatype] + " tidak bisa kosong"
+					elif datatype == 'memberbirthday':
+						parameters['TEAM'][number - 1]['error_birthday'] = label[datatype] + " tidak bisa kosong"
 					invalid = True
 
 			elif data[key] == '':
@@ -97,12 +103,12 @@ def TeamView(request, cfield):
 
 			current_team = Team.objects.create(
 				teamname=data['teamname'], school=data['school'], leader=data['leader'],
-				phone=data['phone'], email=data['email'], docs=data['docs']
+				phone=data['phone'], docs=request.FILES['docs']
 			)
 
 			for member in parameters['TEAM']:
 				Member.objects.create(
-					team=current_team, name=member['name'], phone=member['phone']
+					team=current_team, name=member['name'], grade=member['grade'], birthday=member['birthday']
 				)
 
 			# encode decode index
@@ -126,7 +132,6 @@ def ParticipantView(request, cfield):
 
 		# create a dictionary of important data from POST
 		data = {key:request.POST[key] for key in request.POST if key != csrftoken}
-		print(data)
 
 		# construct team
 
@@ -150,7 +155,7 @@ def ParticipantView(request, cfield):
 
 			current_participant = Participant.objects.create(
 				name=data['name'], school=data['school'], grade=data['grade'], phone=data['phone'],
-				email=data['email'], docs=data['docs']
+				birthday=data['birthday'], docs=request.FILES['docs']
 			)
 
 			participant_id = current_participant.id
