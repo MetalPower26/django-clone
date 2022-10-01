@@ -1,26 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title> Registration </title>
-	{% load static %}
-	<link href="{% static 'regis/css/bootstrap.min.css' %}" rel="stylesheet">
-	<script src="{% static 'regis/js/bootstrap.min.js' %}"> </script>
-</head>
-<body>
-	<h1> You need to pay {{ payment }} </h1>
+{% extends "regis\base.html" %}
+{% block head %}
+{% endblock %}
+{% block title %} Canisius Super League {% endblock %}
+{% block content %}  
+	<div class="container main">
+		<h1 class="bold center"> You need to pay {{ payment }} </h1>
 
-	<p> Nama Tim : {{ team.teamname }} </p>
-	<p> Sekolah : {{ team.school }} </p>
-	<p> Nama Ketua : {{ team.leader }} </p>
-	<p> Nomor Telepon : {{ team.phone }} </p>
-	<p> Dokumen : <a href="{{ team.docs.url }}" target="_blank"> {{ team.docs }} </a> </p>
+		<p> Nama Tim : {{ team.teamname }} </p>
+		<p> Sekolah : {{ team.school }} </p>
+		<p> Nama Ketua : {{ team.leader }} </p>
+		<p> Nomor Telepon : {{ team.phone }} </p>
+		<p> Dokumen : <a href="{{ team.docs.url }}" target="_blank"> {{ team.docs }} </a> </p>
 
-	<h2> Anggota Tim </h2>
-	{% for member in team.member_set.all %}
-		<p> Nama Anggota {{ forloop.counter }} : {{ member.name }} </p>
-		<p> Kelas : {{ participant.grade }} </p>
-		<p> Tanggal Lahir : {{ member.birthday }} </p>
-	{% endfor %}
-</body>
-</html>
+		<h2> Anggota Tim </h2>
+		{% for member in team.member_set.all %}
+			<p> Nama Anggota {{ forloop.counter }} : {{ member.name }} </p>
+			<p> Kelas : {{ participant.grade }} </p>
+			<p> Tanggal Lahir : {{ member.birthday }} </p>
+		{% endfor %}
+	</div>
+{% endblock %}

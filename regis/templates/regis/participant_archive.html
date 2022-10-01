@@ -8,14 +8,15 @@
 	<script src="{% static 'regis/js/bootstrap.min.js' %}"> </script>
 </head>
 <body>
-	<h1> You need to pay {{ payment }} </h1>
+	<div class="container main">
+		<h1> You need to pay {{ payment }} </h1>
 
-	<p> Nama : {{ participant.name }} </p>
-	<p> Sekolah : {{ participant.school }} </p>
-	<p> Kelas : {{ participant.grade }} </p>
-	<p> Nomor Telepon : {{ participant.phone }} </p>
-	<p> Tanggal Lahir : {{ participant.birthday }} </p>
-	<p> Dokumen : <a href="{{ participant.docs.url }}" target="_blank"> {{ participant.docs }} </p>
-	
+		<p> Nama : {{ participant.name }} </p>
+		<p> Sekolah : {{ participant.school }} </p>
+		<p> Kelas : {{ participant.grade }} </p>
+		<p> Nomor Telepon : {{ participant.phone }} </p>
+		<p> Tanggal Lahir : {{ participant.birthday }} </p>
+		<p> Dokumen : <a href="{{ participant.docs.url }}" target="_blank"> {{ participant.docs }} </p>
+	</div>
 </body>
 </html>
