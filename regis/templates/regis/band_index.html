@@ -83,6 +83,16 @@
 				<input class="form-control" id="phone" type="text" name="phone" value="{{ current_phone }}"> <br>
 			</div>
 
+			<div class="form-group">
+				<label for="song1"> Lagu Wajib : </label> <label class="errortag"> {{ error_song1 }} </label>
+				<input class="form-control" id="song1" type="text" name="song1" value="{{ current_song1 }}"> <br>
+			</div>
+
+			<div class="form-group">
+				<label for="song2"> Lagu Bebas : </label> <label class="errortag"> {{ error_song1 }} </label>
+				<input class="form-control" id="song2" type="text" name="song2" value="{{ current_song2 }}"> <br>
+			</div>
+
 			<label> Jika ketua merupakan anggota tim juga, tolong dituliskan kembali dalam form </label> 
 			<hr>
 
@@ -116,7 +126,13 @@
 				<label class="errortag"> {{ memberdata.error_birthday }} </label>
 				<input class="form-control" id="memberbirthday_{{ forloop.counter }}" type="date"
 						name="memberbirthday_{{ forloop.counter }}" value="{{ memberdata.birthday }}">
+
+				<label for="memberrole_{{ forloop.counter }}"> Peran dalam Band : </label>
+				<label class="errortag"> {{ memberdata.error_role }} </label>
+				<input class="form-control" id="memberrole_{{ forloop.counter }}" type="text"
+						name="memberrole_{{ forloop.counter }}" value="{{ memberdata.role }}">
 				<br>
+
 				<hr>
 			</div>
 			{% endfor %}

@@ -1,0 +1,13 @@
+form h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+form label, input {
+    font-size: 25px;
+}
+
+.errortag{
+    font-size: 16px;
+    color: red;
+}

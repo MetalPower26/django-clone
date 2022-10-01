@@ -9,17 +9,18 @@
 </head>
 <body>
 
-	<p> Nama Tim : {{ team.teamname }} </p>
-	<p> Sekolah : {{ team.school }} </p>
-	<p> Nama Ketua : {{ team.leader }} </p>
-	<p> Nomor Telepon : {{ team.phone }} </p>
-	<p> Dokumen : <a href="{{ team.docs.url }}" target="_blank"> {{ team.docs }} </a> </p>
+	<p> Nama Tim : {{ band.teamname }} </p>
+	<p> Sekolah : {{ band.school }} </p>
+	<p> Nama Ketua : {{ band.leader }} </p>
+	<p> Nomor Telepon : {{ band.phone }} </p>
+	<p> Dokumen : <a href="{{ band.docs.url }}" target="_blank"> {{ band.docs }} </a> </p>
 
 	<h2> Anggota Tim </h2>
-	{% for member in team.member_set.all %}
+	{% for member in band.member_set.all %}
 		<p> Nama Anggota {{ forloop.counter }} : {{ member.name }} </p>
 		<p> Kelas : {{ member.grade }} </p>
 		<p> Tanggal Lahir : {{ member.birthday }} </p>
+		<p> Peran dalam Band : {{ member.role }} </p>
 	{% endfor %}
 
 	<p> Apabila ada kesalahan dalam data tolong menghubungi tim admin di </p>

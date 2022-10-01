@@ -1,0 +1,164 @@
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    color: white;
+    min-width: 100vh;
+    background-color: #E28126;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.navbar {
+    --bs-navbar-active-color: #FF9C2F;
+    transition: all 0.4s;
+}
+
+.navbar .nav-link {
+    color: #fff;
+    font-size: 30px;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+.navbar .navbar-brand:hover {
+    filter : brightness(100)
+}
+
+.navbar.active {
+    background: #FF9C2F;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #FF9C2F;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #FF9C2F;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #FF9C2F;
+}
+
+footer {
+    background-color: #0F636B;
+    width: 100%;
+}
+
+.alignright {
+    display: flex;
+    justify-content: right;
+}
+
+.font-23xx {
+    font-family: '23xx',sans-serif;
+}
+
+.maintitle h1 {
+    font-family: '23xx',sans-serif;
+    color: #0F636B;
+    font-weight: bolder;
+    font-size: 100px;
+    text-align: left;
+    margin: 10px;
+    line-height: 100px;
+}
+
+.maindesc {
+    font-size: 25px;
+    text-align: left;
+}
+
+.registerbtn { 
+    background-color: #0F636B;
+    font-size: 40px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.main {
+    margin-top: 80px;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 40px;
+    color: black;
+    padding: 30px;
+}
+
+.sociallink, .sociallink::before {
+    color:#FF9C2F;
+    text-decoration: none;
+}
+
+.hamburger {
+    color: white;
+    font-size: 40px;
+}
+
+.bold { 
+    font-weight: bold;
+}
+
+.center {
+    width: 100%;
+    text-align: center;
+}
+
+.submit {
+    background-color: #0F636B;
+    color: white;
+}
+
+.submit:checked {
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+    border: black;
+}
+
+.submit:hover {
+    background-color: #292929;
+}
+
+@font-face{
+    font-family:'23xx';
+    src: url('\ 23XX.otf'); 
+}
+
+@font-face{
+    font-family:'23xx';
+    src: url('\ 23XX.otf'); 
+}
+
+@media screen and (max-width: 900px) {
+    .col {
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .row {
+        flex-direction: column-reverse;
+    }
+    .img-fluid {
+        width: 80%;
+    }
+    .navbar-collapse {
+        justify-content: center;
+    }
+    .nav-link {
+        text-align: center;
+    }
+}
