@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,11 +74,6 @@
 			<div class="form-group">
 				<label for="grade"> Kelas : </label> <label class="errortag"> {{ error_grade }} </label>
 				<select class="form-control" id="grade" name="grade">
-				{% if current_grade == '' %}
-				<option readonly="true" selected value=""> -- select an option -- </option>
-				{% else %}
-				<option readonly="true" value=""> -- select an option -- </option>
-				{% endif %}
 				{% for grade in GRADE_CHOICES %}
 					{% if grade == current_grade %}
 						<option value="{{ grade }}" selected> {{ grade }} </option>

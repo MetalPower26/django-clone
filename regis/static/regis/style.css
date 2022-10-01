@@ -99,6 +99,15 @@ footer {
     padding: 30px;
 }
 
+form h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+form label, input {
+    font-size: 25px;
+}
+
 .sociallink, .sociallink::before {
     color:#FF9C2F;
     text-decoration: none;

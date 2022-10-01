@@ -30,6 +30,8 @@ class FightParticipant(models.Model):
 	birthday   = models.DateField(blank=True)
 	weight  = models.CharField(max_length=short_char, blank=True)
 	docs    = models.FileField(upload_to='files/', null=True)
+	birthday   = models.DateField(blank=True)
+	docs    = models.FileField(upload_to='files/', null=True)
 
 	def __str__(self):
 		return self.name
