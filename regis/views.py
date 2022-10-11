@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.urls import reverse
 
-from .models import Participant, Team, Member, Band, BandMember
+from .models import Participant, Team, Member, Band, BandMember, FightParticipant
 from .fields import SOLO_FIELDS, TEAM_FIELDS, MIN_SIZE, TEAM_SIZE
 
 import base64
@@ -38,15 +38,23 @@ def index(request, cfield):
 		return render(request, 'regis/fight_index.html', parameters)
 	elif cfield in SOLO_FIELDS:
 		return render(request, 'regis/index.html', parameters)
-	else:
+	elif cfield in TEAM_FIELDS:
 
 		parameters['TEAM'] = []
 		for number in range(1, TEAM_SIZE[cfield]):
 			parameters['TEAM'].append(team_dict.copy())
 
 		return render(request, 'regis/team_index.html', parameters)
+	else:
+		raise Http404("Page Not Found")
 
 csrftoken = 'csrfmiddlewaretoken'
+
+def notEmpty(member):
+	for key in member:
+		if key.find('_') == -1 and member[key] == '':
+			return False
+	return True
 
 def TeamView(request, cfield):
 
@@ -112,13 +120,14 @@ def TeamView(request, cfield):
 
 			current_team = Team.objects.create(
 				teamname=data['teamname'], school=data['school'], leader=data['leader'],
-				phone=data['phone'], docs=request.FILES['docs'], field=cfield,
+				phone=data['phone'], docs=request.FILES['docs'], field=cfield, payment=None,
 			)
 
 			for member in parameters['TEAM']:
-				Member.objects.create(
-					team=current_team, name=member['name'], grade=member['grade'], birthday=member['birthday']
-				)
+				if notEmpty(member):
+					Member.objects.create(
+						team=current_team, name=member['name'], grade=member['grade'], birthday=member['birthday']
+					)
 
 			# encode decode index
 
@@ -200,14 +209,15 @@ def BandView(request, cfield):
 			current_team = Band.objects.create(
 				teamname=data['teamname'], school=data['school'], leader=data['leader'],
 				phone=data['phone'], docs=request.FILES['docs'], field=cfield, song1=data['song1'],
-				song2=data['song2']
+				song2=data['song2'], payment=None,
 			)
 
 			for member in parameters['TEAM']:
-				Member.objects.create(
-					team=current_team, name=member['name'], grade=member['grade'], 
-					birthday=member['birthday'], role=member['role']
-				)
+				if notEmpty(member):
+					Member.objects.create(
+						team=current_team, name=member['name'], grade=member['grade'], 
+						birthday=member['birthday'], role=member['role']
+					)
 
 			# encode decode index
 
@@ -254,7 +264,7 @@ def ParticipantView(request, cfield):
 
 			current_participant = Participant.objects.create(
 				name=data['name'], school=data['school'], grade=data['grade'], phone=data['phone'],
-				birthday=data['birthday'], docs=request.FILES['docs'], field=cfield,
+				birthday=data['birthday'], docs=request.FILES['docs'], field=cfield, payment=None,
 			)
 
 			participant_id = current_participant.id
@@ -276,6 +286,7 @@ def FightView(request, cfield):
 
 		# create a dictionary of important data from POST
 		data = {key:request.POST[key] for key in request.POST if key != csrftoken}
+		print(data)
 
 		# construct team
 
@@ -299,7 +310,8 @@ def FightView(request, cfield):
 
 			current_participant = FightParticipant.objects.create(
 				name=data['name'], school=data['school'], grade=data['grade'], phone=data['phone'],
-				birthday=data['birthday'], docs=request.FILES['docs'], field=cfield, weight=data['weight']
+				birthday=data['birthday'], docs=request.FILES['docs'], field=cfield, weight=data['weight'],
+				payment=None,
 			)
 
 			participant_id = current_participant.id
@@ -315,10 +327,14 @@ def data(request, cfield):
 	
 	if cfield == 'band':
 		return BandView(request, cfield)
-	if cfield in SOLO_FIELDS:
+	elif cfield == 'pencaksilat' or cfield == 'taekwondo':
+		return FightView(request, cfield)
+	elif cfield in SOLO_FIELDS:
 		return ParticipantView(request, cfield)
 	elif cfield in TEAM_FIELDS:
 		return TeamView(request, cfield)
+	else:
+		raise Http404("Page Not Found")
 
 def team_archive(request, cfield, objectkey):
 
@@ -377,7 +393,7 @@ def fight_archive(request, cfield, objectkey):
 	participant_id = participant_id_bytes.decode("ascii")
 	participant_id = int(participant_id)
 
-	participant = Participant.objects.get(pk=participant_id)
+	participant = FightParticipant.objects.get(pk=participant_id)
 
 	parameters = {}
 	parameters['participant'] = participant
@@ -390,7 +406,9 @@ def archive(request, cfield, objectkey):
 		return band_archive(request, cfield, objectkey)
 	elif cfield == 'pencaksilat' or cfield == 'taekwondo':
 		return fight_archive(request, cfield, objectkey)
-	if cfield in SOLO_FIELDS:
+	elif cfield in SOLO_FIELDS:
 		return participant_archive(request, cfield, objectkey)
-	else:
+	elif cfield in TEAM_FIELDS:
 		return team_archive(request, cfield, objectkey)
+	else:
+		raise Http404("Page Not Found")

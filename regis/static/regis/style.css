@@ -108,6 +108,15 @@ form label, input {
     font-size: 25px;
 }
 
+.archive h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.archive p{
+    font-size: 25px;
+}
+
 .sociallink, .sociallink::before {
     color:#FF9C2F;
     text-decoration: none;

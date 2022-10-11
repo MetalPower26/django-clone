@@ -1,130 +1,54 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title> Registration </title>
-	{% load static %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
-    <script src="https://kit.fontawesome.com/79dc5507a6.js" crossorigin="anonymous"></script>
-	<link href="{% static 'regis/css/bootstrap.min.css' %}" rel="stylesheet">
-	<script src="{% static 'regis/js/bootstrap.min.js' %}"> </script>
-	<link href="{% static 'regis/style.css' %}" rel="stylesheet">
-	<link href="{% static 'regis/formstyle.css' %}" rel="stylesheet">
-</head>
-<body>
-
-	<header style="background-color: #0F636B;">
-        <nav class="navbar navbar-expand-lg font-23xx">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="{% static 'regis/img/Logo CC Cup 22_color-blank 1.webp' %}" alt="" height="50">
-                </a>
-                <a class="navbar-brand" href="#">
-                    <img src="{% static 'regis/img/Logo CC White 1.webp' %}" alt="" height="46">
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars hamburger"></i></button>
-                </button>
-
-                <div id="navbarSupportedContent" class="collapse navbar-collapse alignright">
-                    <ul class="navbar-nav justify-content-end">
-                        <li class="nav-item active text-md-start text-center mt-md-0 mt-2">
-                            <a href="#" class="nav-link active text-uppercase orangeText">
-                                Trivia
-                            </a>
-                        </li>
-                        <li class="nav-item active text-md-start text-center mt-md-0 mt-2">
-                            <a href="#" class="nav-link active text-uppercase orangeText">
-                                Merchandise
-                            </a>
-                        </li>
-                        <li class="nav-item active text-md-start text-center mt-md-0 mt-2">
-                            <a href="#" class="orangeText nav-link active text-uppercase">
-                                Perlombaan
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-	<div class="container main">
-        <h1 class="bold center"> CC Cup 2022 Registration Form </h1>
-		<form class="container" action="{% url 'regis:data' field %}" method="post" enctype="multipart/form-data">
-			{% csrf_token %}
-			<div>
-				<label for="name"> Nama : </label> <label class="errortag"> {{ error_name }} </label>
-				<input class="form-control" id="name" type="text" name="name" value="{{ current_name }}"> <br> 
-			</div>
-			<div class="form-group">
-				<label for="school"> Sekolah : </label> <label class="errortag"> {{ error_school }} </label>
-				<input class="form-control" id="school" type="text" name="school" value="{{ current_school }}"> <br>
-			</div>
-			<div class="form-group">
-				<label for="grade"> Kelas : </label> <label class="errortag"> {{ error_grade }} </label>
-				<select class="form-control" id="grade" name="grade">
-				{% if current_grade == '' %}
-				<option readonly="true" selected value=""> -- select an option -- </option>
+{% extends "regis\base.html" %}
+{% block head %}
+{% endblock %}
+{% block title %} Registration {% endblock %}
+{% block content %}  
+<div class="container main">
+    <h1 class="bold center"> CC Cup 2022 Registration Form </h1>
+	<form class="container" action="{% url 'regis:data' field %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div>
+			<label for="name"> Nama : </label> <label class="errortag"> {{ error_name }} </label>
+			<input class="form-control" id="name" type="text" name="name" value="{{ current_name }}"> <br> 
+		</div>
+		<div class="form-group">
+			<label for="school"> Sekolah : </label> <label class="errortag"> {{ error_school }} </label>
+			<input class="form-control" id="school" type="text" name="school" value="{{ current_school }}"> <br>
+		</div>
+		<div class="form-group">
+			<label for="grade"> Kelas : </label> <label class="errortag"> {{ error_grade }} </label>
+			<select class="form-control" id="grade" name="grade">
+			{% if current_grade == '' %}
+			<option readonly="true" selected value=""> -- select an option -- </option>
+			{% else %}
+			<option readonly="true" value=""> -- select an option -- </option>
+			{% endif %}
+			{% for grade in GRADE_CHOICES %}
+				{% if grade == current_grade %}
+					<option value="{{ grade }}" selected> {{ grade }} </option>
 				{% else %}
-				<option readonly="true" value=""> -- select an option -- </option>
+					<option value="{{ grade }}"> {{ grade }} </option>
 				{% endif %}
-				{% for grade in GRADE_CHOICES %}
-					{% if grade == current_grade %}
-						<option value="{{ grade }}" selected> {{ grade }} </option>
-					{% else %}
-						<option value="{{ grade }}"> {{ grade }} </option>
-					{% endif %}
-				{% endfor %}
-				</select> <br>
-			</div>
-            <div class="form-group">
-                <label for="weight"> Berat : </label> <label class="errortag"> {{ error_weight }} </label>
-                <input class="form-control" id="weight" type="text" name="weight" value="{{ current_weight }}"> <br>
-            </div>
-			<div class="form-group">
-				<label for="phone"> Nomor Telepon : </label> <label class="errortag"> {{ error_phone }} </label>
-				<input class="form-control" id="phone" type="text" name="phone" value="{{ current_phone }}"> <br>
-			</div>
-			<div class="form-group">
-				<label for="birthday"> Tanggal Lahir : </label> <label class="errortag"> {{ error_birthday }} </label>
-				<input class="form-control" id="birthday" type="date" name="birthday" value="{{ current_birthday }}"> <br>
-			</div>
-			<div class="form-group">
-				<label for="docs"> Dokumen : </label> <label class="errortag"> {{ error_docs }} </label>
-				<input class="form-control" id="docs" type="file" name="docs" value="{{ current_docs }}"> <br>
-			</div>
-			<input class="form-control submit" type="submit" value="OK">
-		</form>
-	</div>
-
-	<footer class="text-center text-lg-start text-muted">
-        <section class="p-md-4 border-bottom">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a href="..." class="me-md-4 text-reset px-md-0 px-2 fa-brands fa-instagram sociallink"></a>
-                </li>
-                <li class="nav-item">
-                    <a href="..." class="me-md-4 text-reset px-md-0 px-2 fa-brands fa-youtube sociallink"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="sociallink bold" aria-current="page" href="...">@canisiuscollegecup</a>
-                </li>
-            </ul>
-        </section>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-    </script>
-</body>
-</html>
+			{% endfor %}
+			</select> <br>
+		</div>
+        <div class="form-group">
+            <label for="weight"> Berat : </label> <label class="errortag"> {{ error_weight }} </label>
+            <input class="form-control" id="weight" type="text" name="weight" value="{{ current_weight }}"> <br>
+        </div>
+		<div class="form-group">
+			<label for="phone"> Nomor Telepon : </label> <label class="errortag"> {{ error_phone }} </label>
+			<input class="form-control" id="phone" type="text" name="phone" value="{{ current_phone }}"> <br>
+		</div>
+		<div class="form-group">
+			<label for="birthday"> Tanggal Lahir : </label> <label class="errortag"> {{ error_birthday }} </label>
+			<input class="form-control" id="birthday" type="date" name="birthday" value="{{ current_birthday }}"> <br>
+		</div>
+		<div class="form-group">
+			<label for="docs"> Dokumen : </label> <label class="errortag"> {{ error_docs }} </label>
+			<input class="form-control" id="docs" type="file" name="docs" value="{{ current_docs }}"> <br>
+		</div>
+		<input class="form-control submit" type="submit" value="OK">
+	</form>
+</div>
+{% endblock %}
