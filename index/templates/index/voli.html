@@ -1,0 +1,138 @@
+{% extends "index\base.html" %}
+{% block head %}
+{% endblock %}
+{% load static %}
+{% block title %} Voli | CC Cup {% endblock %}
+{% block content %}
+	<p id="gap"></p>
+			<div id="exp">
+	<img src="{% static 'index/img/expand.png' %}" id="cpexpand">
+	<div id="opsiexpand">
+	<table id="layoutexp">
+	<tr>
+	<td colspan=2>Alvin</td>
+	<td><a href="https://wa.me/6281387577711"><img src="{% static 'index/img/iconwa.png' %}" id="cpicon"></a></td>
+	<td id="idline"><img src="{% static 'index/img/line.png' %}" id="cpicon"><div id="ket">alvin.w.t</div></td>
+	</tr>
+	<tr>
+	<td colspan=2>Ignatius</td>
+	<td><a href="https://wa.me/6282124574741"><img src="{% static 'index/img/iconwa.png' %}" id="cpicon"></a></td>
+	<td id="idline"><img src="{% static 'index/img/line.png' %}" id="cpicon"><div id="ket">gantengcoll</div></td>
+	</tr>
+	</table>
+	</div>
+	</div>
+	<h3>ATURAN VOLI</h3>
+	<p id="judul">ATURAN VOLI</p>
+	<p id="gap"></p>
+	<div id="materi">
+	<h4>KETENTUAN PESERTA</h4>
+	<ol>
+	<li>Setiap tim beranggotakan 6 (enam) orang pemain yang telah terdaftar pada tiap pertandingan.</li>
+	<li>Setiap tim beranggotakan maksimal 12 (dua belas) pemain termasuk <i>libero</i> (bila ada).</li>
+	</ol><br>
+	<h4>KETENTUAN KOSTUM</h4>
+	<ol>
+	<li>Setiap peserta dalam satu tim harus menggunakan kostum, terdiri atas kaos dan celana yang serasi atau sama dengan timnya.</li>
+	<li>Setiap peserta wajib menggunakan nomor punggung atau dada. Nomor celana harus sama dengan nomor punggung.</li>
+	<li>Kostum yang dipakai harus menggunakan nomor maksimal 2 (dua) digit. Khusus <i>libero</i> harus menggunakan baju dengan motif dan warna yang berbeda.</li>
+	<li>Dalam satu tim tidak boleh ada pemain dengan nomor punggung atau dada yang sama, termasuk <i>libero</i>.</li>
+	<li>Atribut seperti topi, kalung, <i>headband</i>, dan lainnya boleh digunakan selama tidak mengganggu jalannya pertandingan dan bersedia melepas apabila tim lawan menyatakan keberatan.</li>
+	</ol><br>
+	<h4>TEMPAT DAN WAKTU</h4>
+	<ol>
+	<li>Tempat yang digunakan adalah 2 lapangan yaitu lapangan voli A dan B. Lapangan voli A untuk pertandingan voli putra, sedangkan lapangan voli B untuk pertandingan voli putra dan voli putri.</li>
+	<li>Setiap tim yang bertanding diharapkan datang sekurang-kurangnya 15 (lima belas) menit sebelum pertandingan.</li>
+	<li>Bila sebelum waktu pertandingan kedua tim yang akan bertanding telah siap melakukan pertandingan maka pertandingan akan dimulai saat itu juga.</li>
+	<li>Tim yang jumlah pemainnya belum mencapai 6, setelah 10 menit dari jadwal yang ditetapkan, tim tersebut  dianggap kalah walkover (WO) dengan penghitungan skor 25-0 pada setiap setnya.</li>
+	<li>Penghitungan waktu didasarkan pada penghitungan jam panitia.</li>
+	</ol><br>
+	<h4>SISTEM PERTANDINGAN PUTRA</h4>
+	<ol>
+	<li>Jumlah maksimal peserta pertandingan voli putra adalah 16 tim.</li>
+	<li>Dari maksimal 16 tim putra akan dibagi menjadi 4 <i>pool</i> yang setiap <i>pool</i>-nya berisi 4 tim. Dari tiap <i>pool</i> akan dipilih juara dan <i>runner up</i> pool untuk babak selanjutnya. Pada pool ini akan diterapkan sistem <i>two-winning set</i>. Tim tuan rumah akan dipisah kedalam dua pool berbeda.</li>
+	<li>Pada babak <i>pool</i>, akan terdapat tim yang menang dan kalah dalam setiap pertandingan. Bila seri maka akan diadakan <i>rubber set</i> untuk menentukan pemenang dalam pertandingan.</li>
+	<li>Jika setelah selesai pertandingan dalam satu <i>pool</i> terdapat dua atau lebih tim yang memiliki banyak kemenangan yang sama, maka tim yang lolos akan dilihat dari jumlah skor total tertinggi yang dikumpulkan pada babak <i>pool</i>.</li>
+	<li>Pada babak perempat final akan diterapkan sistem gugur, di mana 8 tim yang telah menang akan bertanding dan tim yang menang pada babak perempat final ini akan memasuki babak semifinal. Pada babak ini akan diterapkan sistem <i>two-winning set</i>.</li>
+	<li>Pada babak semifinal akan diterapkan sistem gugur, di mana 4 tim yang telah menang akan bertanding. Dan tim yang menang pada babak semifinal ini akan memasuki babak final, sedangkan yang kalah akan melakukan pertandingan perebutan juara ketiga. Pada babak ini akan diterapkan sistem <i>best of five set / three-winning set</i>.</li>
+	</ol><br>
+	<h4>SISTEM PERTANDINGAN PUTRI</h4>
+	<ol>
+	<li>Jumlah maksimal peserta pertandingan voli putri adalah 8 tim.</li>
+	<li>Dari maksimal 8 tim putri akan langsung menuju ke babak perempat final. Pada babak ini akan diterapkan sistem gugur, di mana 8 tim yang telah menang akan bertanding dan tim yang menang pada babak perempat final ini akan memasuki babak semifinal. Pada babak ini akan diterapkan sistem <i>two-winning set</i>.</li>
+	<li>Pada babak semifinal akan diterapkan sistem gugur, di mana 4 tim yang telah menang akan bertanding. Dan tim yang menang pada babak semifinal ini akan memasuki babak final, sedangkan yang kalah akan melakukan pertandingan perebutan juara ketiga. Pada babak ini akan diterapkan sistem <i>best of five set / three-winning set</i>.</li>
+	</ol><br>
+	<h4>PERATURAN PERTANDINGAN</h4>
+	<ol>
+	<li>Peraturan yang digunakan dalam pertandingan bola voli CANISIUS COLLEGE CUP 2022 adalah peraturan PBVSI (Persatuan Bola Voli Seluruh Indonesia) yang berlaku saat ini.</li>
+	<li>Semua peserta wajib menaati dan menghormati segala keputusan wasit, keputusan wasit adalah bulat dan tidak dapat diganggu gugat.</li>
+	<li>Bila bola menyentuh tembok atau langit-langit maka akan dianggap out.</li>
+	</ol><br>
+	<h4>LAIN-LAIN</h4>
+	<ol>
+	<li>Bila hujan turun dan mengganggu jalannya pertandingan maka pertandingan itu akan ditunda sesuai dengan keputusan panitia.</li>
+	<li>Bila pertandingan harus dihentikan di tengah-tengah set, maka skor terakhir akan dipakai ketika pertandingan tersebut dimulai kembali.</li>
+	<li>Bila nanti diadakan penjadwalan ulang, peserta yang bersangkutan diharapkan memperhatikan pengumuman panitia.</li>
+	<li>Panitia CANISIUS COLLEGE CUP 2022 tidak menyediakan bola untuk pemanasan untuk tim yang bertanding.</li>
+	<li>Setiap tim memiliki kemungkinan bertanding dua kali pada hari yang sama.</li>
+	<li>Dalam setiap pertandingan sebuah tim berhak untuk didampingi oleh maksimal 2 orang pelatih atau guru pendamping.</li>
+	<li>Peserta dilarang menghina lawannya baik dalam bentuk perbuatan maupun perkataan selama pertandingan berlangsung.</li>
+	<li>Bangku pemain hanya boleh diisi oleh pemain yang akan bertanding dan <i>official</i>.</li>
+	<li>Peserta dilarang melakukan kontak fisik dengan sesama pemain atau pun dengan panitia.</li>
+	</ol><br>
+	<h4>BAGAN PERTANDINGAN</h4>
+	<img src="{% static 'index/img/baganvoli1.png' %}" id="bagan"><br><br>
+	<img src="{% static 'index/img/baganvoli2.png' %}" id="bagan"><br><br>
+	<img src="{% static 'index/img/baganvoli3.png' %}" id="bagan">
+	<br><br>
+	<h4>BABAK PEREMPAT FINAL (PUTRA)</h4>
+	<table id="penyisihan">
+	<tr id="colorblue">
+	<td id="col1">Q1</td><td>Juara Pool A Vs. Runner-up Pool C</td>
+	</tr>
+	<tr id="colorred">	
+	<td id="col1">Q2</td><td>Juara Pool B Vs. Runner-up Pool D</td>
+	</tr>
+	<tr id="colorblue">
+	<td id="col1">Q3</td><td>Juara Pool C Vs. Runner-up Pool A</td>
+	</tr>
+	<tr id="colorred">
+	<td id="col1">Q4</td><td>Juara Pool D Vs. Runner-up Pool B</td>
+	</tr>
+	</table id="penyisihan"><br>
+	<h4>BABAK PEREMPAT FINAL (PUTRI)</h4>
+	<table id="penyisihan">
+	<tr id="colorblue">
+	<td id="col1">Q1</td><td>A Vs. B</td>
+	</tr>
+	<tr id="colorred">
+	<td id="col1">Q2</td><td>C Vs. D</td>
+	</tr>
+	<tr id="colorblue">
+	<td id="col1">Q3</td><td>E Vs. F</td>
+	</tr>
+	<tr id="colorred">
+	<td id="col1">Q4</td><td>G Vs. H</td>
+	</tr>
+	</table><br>
+	<h4>BABAK SEMIFINAL</h4>
+	<table id="penyisihan">
+	<tr id="colorblue">
+	<td id="col1">Semifinal I</td><td>Pemenang Q1 Vs. Pemenang Q2</td>
+	</tr>
+	<tr id="colorred">
+	<td id="col1">Semifinal II</td><td>Pemenang Q3 Vs. Pemenang Q4</td>
+	</tr>
+	</table><br>
+	<h4>BABAK FINAL DAN PEREBUTAN JUARA 3</h4>
+	<table id="penyisihan">
+	<tr id="colorblue">
+	<td>Final</td><td>Pemenang SF I Vs. Pemenang SF II</td>
+	</tr>
+	<tr id="colorred">	
+	<td>Perebutan Juara Ketiga</td><td>Tim kalah SF I Vs. Tim kalah SF II</td>
+	</tr>
+	</table>
+	</div>
+	<p id="gapm"></p>
+{% endblock %}

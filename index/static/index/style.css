@@ -1,0 +1,184 @@
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    color: white;
+    min-width: 100vh;
+}
+
+.navbar {
+    --bs-navbar-active-color: #FF9C2F;
+    transition: all 0.4s;
+    background: transparent;
+}
+
+.navbar .nav-link {
+    color: #fff;
+    font-size: 30px;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+.navbar .navbar-brand:hover {
+    filter: brightness(100)
+}
+
+.navbar.active {
+    background: #FF9C2F;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #FF9C2F;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #FF9C2F;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #FF9C2F;
+}
+
+body {
+    background-color: #E28126;
+}
+
+footer {
+    background-color: #0F636B;
+}
+
+.alignright {
+    display: flex;
+    justify-content: right;
+}
+
+.font-23xx {
+    font-family: '23xx', sans-serif;
+}
+
+.maintitle h1 {
+    font-family: '23xx', sans-serif;
+    color: #FF9C2F;
+    font-weight: bolder;
+    font-size: 140px;
+    text-align: left;
+    margin-left: -50px;
+    margin-bottom: 30px;
+    line-height: 100px;
+}
+
+.maindesc {
+    font-size: 30px;
+    text-align: left;
+    margin-left: -50px;
+    margin-bottom: 20px;
+}
+
+.registerbtn {
+    background-color: #0F636B;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: -100px;
+    width: 100%;
+}
+
+.imglog {
+    width: 100% !important;
+    height: 45% !important;
+    margin-bottom: 45px;
+}
+
+.main {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.bodybg {
+    background: linear-gradient(rgba(0, 0, 0, 0.288), rgba(0, 0, 0, 0.282)),
+        url("img/Ilustrasi\ 1920x1080\ Final.webp");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* margin-top: 150px; */
+}
+
+.graybg {
+    background-color: #0F636B !important;
+}
+
+.tagline h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.tagline h2 {
+    font-size: 50px;
+}
+
+.sociallink,
+.sociallink::before {
+    color: #FF9C2F;
+    text-decoration: none;
+}
+
+.hamburger {
+    color: white;
+    font-size: 40px;
+}
+
+@font-face {
+    font-family: '23xx';
+    src: url('\ 23XX.otf');
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        background: #0F636B;
+    }
+
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        color: #555;
+    }
+
+    .maintitle h1 {
+        font-family: '23xx', sans-serif;
+        color: #FF9C2F;
+        font-weight: bolder;
+        font-size: 50px;
+        text-align: center;
+        margin: 10px;
+        line-height: 100px;
+    }
+
+    .registerbtn {
+        background-color: #0F636B;
+        font-size: 30px;
+        font-weight: bold;
+        width: 100%;
+        border-radius: 25px;
+
+    }
+
+    .bodybg {
+        background: linear-gradient(rgba(0, 0, 0, 0.288), rgba(0, 0, 0, 0.282)),
+            url("img/Ilustrasi\ 1920x1080\ Final.webp");
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+}
+
+.bold {
+    font-weight: bold;
+}

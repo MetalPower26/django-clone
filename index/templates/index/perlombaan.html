@@ -1,0 +1,173 @@
+{% extends "index\base.html" %}
+{% block head %}
+{% endblock %}
+{% load static %}
+{% block title %} Perlombaan | CC Cup {% endblock %}
+{% block content %}
+	<p id="gap"></p>
+	<h3>LOMBA-LOMBA CC CUP XXXVII</h3>
+	<p id="judul">LOMBA-LOMBA CC CUP XXXVII</p>
+	<p id="gap"></p>
+	<table id="layout">
+	<tr id="keterangan">
+		<td>Futsal</td>
+		<td>Basket</td>
+		<td>Bulu Tangkis</td>
+	</tr>
+	<tr>
+		<td id="cellk"><a href="{% url 'index:teknis' 'futsal' %}"><div id="icon">
+            <img src="{% static 'index/img/Futsal-03.webp' %}" id="aturan"></img>
+        </div></a></td>
+		<td id="cellk"><a href="{% url 'index:teknis' 'basket' %}"><div id="icon">
+            <img src="{% static 'index/img/Basket-03.webp' %}" id="aturan"></div>
+        </a></td>
+		<td id="cellk"><a href="{% url 'index:teknis' 'bulutangkis' %}"><div id="icon">
+            <img src="{% static 'index/img/Bulu Tangkis-03.webp' %}" id="aturan">
+        </div></a></td>
+	</tr>
+	<tr id="gap">
+		<td colspan=3></td>
+	</tr>
+	<tr id="keterangan">
+		<td>Tenis Meja</td>
+		<td>Pencak Silat</td>
+		<td>Modern Dance</td>
+	</tr>
+	<tr>
+		<td id="cellk"><a href="{% url 'index:teknis' 'tenismeja' %}"><div id="icon">
+            <img src="{% static 'index/img/Tenis Meja-03.webp' %}" id="aturan"></div>
+        </a></td>
+		<td id="cellk"><a href="{% url 'index:teknis' 'pencaksilat' %}"><div id="icon">
+            <img src="{% static 'index/img/Pencak Silat-03.webp' %}" id="aturan"></div>
+        </a></td>
+		<td id="cellk"><a href="{% url 'index:teknis' 'moderndance' %}"><div id="icon">
+            <img src="{% static 'index/img/Modern Dance-03.webp' %}" id="aturan"></div>
+        </a></td>
+	</tr>
+	<tr id="gap">
+		<td colspan=3></td>
+	</tr>
+	<tr id="keterangan">
+		<td>Band</td>
+		<td>Short Movie</td>
+		<td>English Debate</td>
+	</tr>
+	<tr>
+		<td id="cellk"><a href="{% url 'index:teknis' 'band' %}"><div id="icon">
+            <img src="{% static 'index/img/Band-03.webp' %}" id="aturan"></div>
+        </a></td>
+		<td id="cellk"><a href="{% url 'index:teknis' 'shortmovie' %}"><div id="icon">
+            <img src="{% static 'index/img/Short Movie-03.webp' %}" id="aturan"></div>
+        </a></td>
+		<td id="cellk"><a href="{% url 'index:teknis' 'englishdebate' %}"><div id="icon">
+            <img src="{% static 'index/img/English-Debate-03.webp' %}" id="aturan"></div>
+        </a></td>
+	</tr>
+	<tr id="gap">
+		<td colspan=3></td>
+	</tr>
+	<tr id="keterangan">
+		<td>Taekwondo</td>
+		<td>Catur</td>
+		<td>Wall Climb</td>
+	</tr>
+	<tr>
+		<td id="cellk"><a href="{% url 'index:teknis' 'taekwondo' %}"><div id="icon">
+            <img src="{% static 'index/img/Taekwondo-03.webp' %}" id="aturan"></div>
+        </a></td>
+		<td id="cellk"><a href="{% url 'index:teknis' 'catur' %}"><div id="icon">
+            <img src="{% static 'index/img/Catur-03.webp' %}" id="aturan"></div></a></td>
+		<td id="cellk"><a href="{% url 'index:teknis' 'wallclimb' %}"><div id="icon">
+            <img src="{% static 'index/img/Wall Climb-03.webp' %}" id="aturan"></div>
+        </a></td>
+	</tr>
+	<tr id="gap">
+		<td colspan=3></td>
+	</tr>
+	<tr id="keterangan">
+		<td>Fotografi</td>
+		<td>Voli</td>
+	</tr>
+	<tr>
+		<td id="cellk"><a href="{% url 'index:teknis' 'fotografi' %}"><div id="icon">
+            <img src="{% static 'index/img/Fotografi-03.webp' %}" id="aturan"></div>
+        </a></td>
+		<td id="cellk"><a href="{% url 'index:teknis' 'voli' %}"><div id="icon">
+            <img src="{% static 'index/img/Voli-03.png' %}" id="aturan"></div>
+        </a></td>
+	</tr>
+	</table>
+	<div id="pembatasscroll">
+		<div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+
+			<div class="carousel-cell">
+			<p id="keterangan1">Futsal</p>
+			<a href="{% url 'index:teknis' 'futsal' %}"><div id="iconm">
+                <img src="{% static 'index/img/Futsal-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan2">Basket</p>
+			<a href="{% url 'index:teknis' 'basket' %}"><div id="iconm1">
+                <img src="{% static 'index/img/Basket-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan1">Bulu Tangkis</p>
+			<a href="{% url 'index:teknis' 'bulutangkis' %}"><div id="iconm">
+                <img src="{% static 'index/img/Bulu Tangkis-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan2">Tenis Meja</p>
+			<a href="{% url 'index:teknis' 'tenismeja' %}"><div id="iconm1">
+                <img src="{% static 'index/img/Tenis Meja-03.webp' %}" id="aturan">
+            </div></a>
+			</div>
+			<div class="carousel-cell">
+			<p id="keterangan2">Pencak Silat</p>
+			<a href="{% url 'index:teknis' 'pencaksilat' %}"><div id="iconm1">
+                <img src="{% static 'index/img/Pencak Silat-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan1">Modern Dance</p>
+			<a href="{% url 'index:teknis' 'moderndance' %}"><div id="iconm">
+                <img src="{% static 'index/img/Modern Dance-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan2">Band</p>
+			<a href="{% url 'index:teknis' 'band' %}"><div id="iconm1">
+                <img src="{% static 'index/img/Band-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan1">Short Movie</p>
+			<a href="{% url 'index:teknis' 'shortmovie' %}"><div id="iconm">
+                <img src="{% static 'index/img/Short Movie-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan2"></p>
+			</div>
+			<div class="carousel-cell">
+			<p id="keterangan1">English Debate</p>
+			<a href="{% url 'index:teknis' 'englishdebate' %}"><div id="iconm">
+                <img src="{% static 'index/img/English-Debate-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan2">Taekwondo</p>
+			<a href="{% url 'index:teknis' 'taekwondo' %}"><div id="iconm1">
+                <img src="{% static 'index/img/Taekwondo-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan1">Catur</p>
+			<a href="{% url 'index:teknis' 'catur' %}"><div id="iconm">
+                <img src="{% static 'index/img/Catur-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan2">Wall Climb</p>
+			<a href="{% url 'index:teknis' 'wallclimb' %}"><div id="iconm1">
+                <img src="{% static 'index/img/Wall Climb-03.webp' %}" id="aturan">
+            </div></a>
+			</div>
+			<div class="carousel-cell">
+			<p id="keterangan2">Fotografi</p>
+			<a href="{% url 'index:teknis' 'fotografi' %}"><div id="iconm1">
+                <img src="{% static 'index/img/Fotografi-03.webp' %}" id="aturan">
+            </div></a>
+			<p id="keterangan1">Voli</p>
+			<a href="{% url 'index:teknis' 'voli' %}"><div id="iconm">
+                <img src="{% static 'index/img/Voli-03.png' %}" id="aturan">
+            </div></a>
+
+			</div>
+		</div>
+	</div>
+    
+	<p id="gapm"></p>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "index\base.html" %}
+{% block head %}
+{% endblock %}
+{% load static %}
+{% block title %} Band | CC Cup {% endblock %}
+{% block content %}
+	<p id="gap"></p>
+	<div id="exp">
+	<img src="{% static 'index/img/expand.png' %}" id="cpexpand">
+	<div id="opsiexpand">
+	<table id="layoutexp">
+	<tr>
+	<td colspan=2>Farrel</td>
+	<td><a href="https://wa.me/628573372670"><img src="{% static 'index/img/iconwa.png' %}" id="cpicon"></a></td>
+	<td id="idline"><img src="{% static 'index/img/line.png' %}" id="cpicon"><div id="ket">210306789</div></td>
+	</tr>
+	<tr>
+	<td colspan=2>Davin</td>
+	<td><a href="https://wa.me/6285951581459"><img src="{% static 'index/img/iconwa.png' %}" id="cpicon"></a></td>
+	<td id="idline"><img src="{% static 'index/img/line.png' %}" id="cpicon"><div id="ket">moccit</div></td>
+	</tr>
+	</table>
+	</div>
+	</div>
+	<h3>ATURAN BAND</h3>
+	<p id="judul">ATURAN BAND</p>
+	<p id="gap"></p>
+	<a href="{% url 'regis:index' 'band' %}"> <h4> Registrasi Lomba Band CC Cup </h4> </a>
+	<div id="materi">
+	<h4>PERATURAN UMUM</h4>
+	<ol>
+	<li>Peserta lomba adalah siswa dan atau siswi SMA atau Sederajat tingkat nasional.</li>
+	<li>Peserta harus mengisi formulir pendaftaran dan melampirkan fotokopi kartu pelajar masing-masing.</li>
+	<li>Peserta membawa surat keterangan rekomendasi keikutsertaan dari sekolah yang bersangkutan dilengkapi stempel asli untuk menghindari hal-hal yang tidak diinginkan.</li>
+	<li>Peserta atau sekolah bertanggung jawab penuh atas setiap peserta yang didaftarkan.</li>
+	<li>Peserta wajib melakukan pendaftaran sesuai petunjuk yang telah diberikan panitia.</li>
+	<li>Peserta wajib melakukan pembayaran uang WO dan pendaftaran.</li>
+	<li>Satu sekolah maksimal mengirimkan 2 (dua) grup band.</li>
+	<li>Setiap band wajib hadir paling lambat 15 menit sebelum jadwal tampil yang telah ditentukan.</li>
+	<li>Apabila berhalangan, maka bisa menghubungi koordinator lomba band (Farrel: <a href="tel:+628573372670" style="color:white;">08573372670</a>)</li>
+	</ol><br>
+	<h4>KRITERIA PESERTA</h4>
+	<ol>
+	<li>Peserta yang berhak mengikuti perlombaan Band CC Cup 2022 ini adalah siswa-siswi SMA dan sederajat dari sebuah sekolah saja, pada tahun ajaran 2022/2023.</li>
+	<li>Peserta yang boleh bertanding adalah peserta yang terdaftar pada sekretariat sebagai peserta lomba band CC Cup 2022 yang sah.</li>
+	<li>Pertandingan Band CC Cup 2022 dibuka untuk murid putra dan putri.</li>
+	<li>Peserta yang berhak mengikuti pertandingan Band CC Cup 2022 adalah mereka yang lahir di tanggal 1 Januari 2004 sampai dengan 31 Desember 2008.</li>
+	<li>Bagi individu yang tidak memenuhi syarat-syarat di atas tidak diperkenankan untuk berpartisipasi dalam CC Cup 2022.</li>
+	</ol><br>
+	<h4>KRITERIA KELOMPOK</h4>
+	<ol>
+	<li>Perlombaan Band CC Cup 2022 menggunakan sistem kelompok.</li>
+	<li>Satu kelompok minimal terdiri atas 3 orang peserta, dan maksimal terdiri dari 10 orang peserta dan tidak ada cadangan.</li>
+	<li>Setiap band harus memiliki vokalis (tidak boleh band instrumental).</li>
+	</ol><br>
+	<h4>PERATURAN PERLOMBAAN</h4>
+	<ol>
+	<li>Perlombaan akan dibagi menjadi 2 babak, yang pertama adalah babak penyisihan dan babak final yang akan diselenggarakan (lokasi perlombaan).</li>
+	<li>Peserta wajib memenuhi persyaratan dalam pendaftaran dan melengkapi administrasi (dibawa saat technical meeting ).
+	<ol type="a">
+	<li>Formulir Pendaftaran</li>
+	<li>Pas foto</li>
+	<li>Surat rekomendasi sekolah</li>
+	<li>Uang pendaftaran dan uang WO</li>
+	</ol>
+	</li>
+	<li>Peserta terdaftar sebagai siswa/i aktif di SMA yang bersangkutan.</li>
+	<li>Pada babak penyisihan, peserta lomba band membawakan 1 lagu wajib (boleh ‘medley’ ) dan 1 lagu bebas.</li>
+	<li>Pilihan Lagu Wajib:
+	<ol type="a">
+	<li>Aku Cinta Kau dan Dia - The Rock</li>
+	<li>Sesaat Kau Hadir - Utha Likumahuwa</li>
+	<li>Smells Like Teen Spirit - Nirvana</li>
+	<li>Sectumsempra - Feast</li>
+	<li>Sweet Child O’ Mine - Guns N’ Roses</li>
+	</ol>
+	</li>
+	<li>Secara keseluruhan, setiap band berhak mendapatkan waktu 15 menit (termasuk persiapan dan penampilan)</li>
+	<li>Lagu yang dibawakan tidak boleh mengandung unsur SARA, kekerasan, dan pornografi.</li>
+	<li>Keputusan juri mutlak dan tidak dapat diganggu gugat.</li>
+	<li>Setiap band yang akan tampil harus memenuhi kriteria kelompok</li>
+	<li>Peserta diizinkan membawa peralatan masing-masing, panitia menyediakan : 1 set drum, 1 keyboard dengan amplifier, 1 gitar listrik dengan 2 amplifier, 1 bass listrik dengan amplifier dan microphone. Peserta <b>dianjurkan</b> membawa sendiri alat-alatnya. Bila ingin menggunakan alat yang diluar alat band standar, harap memberitahu ketika technical meeting.</li>
+	<li>Sistem Penilaian:
+	<ol type="a">
+	<li>Kekompakan: Penilaian terhadap kekompakan dalam memainkan musik/lagu di dalam band.</li>
+	<li>Skill: Penilaian terhadap skill dari personil band masing-masing. Dinilai berdasarkan kemahiran para personil pada saat membawakan perannya dalam band.</li>
+	<li>Musikalitas: Penilaian terhadap tingkat musikalitas Band dalam membawakan musik/lagu. Aransemen : penilaian terhadap aransemen dari masing-masing band di dalam lagu yang dibawakan.</li>
+	<li>Kreativitas: penilaian terhadap kreativitas pada saat penampilan band.</li>
+	</ol>
+	</li>
+	<li>Seragam bebas namun sopan. Diberikan poin tambahan untuk kreativitas.</li>
+	</ol>
+	</div>
+	<p id="gapm"></p>
+{% endblock %}

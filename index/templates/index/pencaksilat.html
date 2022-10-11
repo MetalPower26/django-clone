@@ -1,0 +1,107 @@
+{% extends "index\base.html" %}
+{% block head %}
+{% endblock %}
+{% load static %}
+{% block title %} Pencak Silat | CC Cup {% endblock %}
+{% block content %}
+	<p id="gap"></p>
+		<div id="exp">
+	<img src="{% static 'index/img/expand.png' %}" id="cpexpand">
+	<div id="opsiexpand">
+	<table id="layoutexp">
+	<tr>
+	<td colspan=2>Jova</td>
+	<td><a href="https://wa.me/6287788104109"><img src="{% static 'index/img/iconwa.png' %}" id="cpicon"></a></td>
+	<td id="idline"><img src="{% static 'index/img/line.png' %}" id="cpicon"><div id="ket">jovalol</div></td>
+	</tr>
+	<tr>
+	<td colspan=2>Matthew</td>
+	<td><a href="https://wa.me/628818812201"><img src="{% static 'index/img/iconwa.png' %}" id="cpicon"></a></td>
+	<td id="idline"><img src="{% static 'index/img/line.png' %}" id="cpicon"><div id="ket">clem124</div></td>
+	</tr>
+	</table>
+	</div>
+	</div>
+	<h3>ATURAN PENCAK SILAT</h3>
+	<p id="judul">ATURAN PENCAK SILAT</p>
+	<p id="gap"></p>
+	<div id="materi">
+	<h4>PERATURAN UMUM</h4>
+	<ol>
+	<li>Peserta <b>wajib mematuhi peraturan umum</b> CC CUP 2022 serta melengkapi syarat administrasi untuk mengikuti pertandingan.</li>
+	<li>CC CUP 2022 berlangsung dari tanggal 5 November 2022 - 12 November 2022.</li>
+	<li>Peserta lomba adalah siswa SMA atau sederajat tingkat nasional.</li>
+	<li>Peserta <b>wajib</b> <font id="sorot">mengisi formulir pendaftaran dan melampirkan</font> surat keterangan sehat dari dokter, hasil scan akta kelahiran, foto kartu pelajar, dan pas foto.</li>
+	<li>Peserta <b>wajib</b> melakukan pembayaran uang pendaftaran dan uang WO serta melampirkannya.</li>
+	<li>Peserta yang mendaftar, <b>wajib hadir</b> dalam <i>Technical meeting</i> dengan jadwal yang sudah ditentukan. Peserta atau regu yang tidak hadir pada <i>Technical meeting</i> dianggap menyetujui seluruh ketentuan yang dirancang oleh panitia dan tidak diperbolehkan protes.</li>
+	<li>Penimbangan ulang dan undian <font id="sorot">dilakukan pada <i>Technical meeting</i></font> CC CUP 2022 untuk menentukan pembagian jadwal atau urutan peserta.</li>
+	<li>Peserta yang bertanding <b>wajib menggunakan</b> <font id="sorot">kelengkapan pakaian pencak silat</font> (tidak disediakan panitia).</li>
+	<li>Tidak menggunakan atau mengenakan aksesoris apapun (gelang, jam, cincin) yang dapat merugikan peserta lain.</li>
+	</ol><br>
+	<h4>KETENTUAN PESERTA</h4>
+	<ol>
+	<li>Peserta yang mengikuti pertandingan hanyalah peserta yang <b>sudah</b> mendaftarkan diri lewat formulir pendaftaran yang disediakan dan sudah membayar ketentuan pendaftaran.</li>
+	<li>Peserta yang mengikuti pertandingan <b>wajib</b> memiliki dan menunjukkan <font id="sorot">kartu peserta (ID CARD)</font> yang sudah disediakan oleh panitia sebagai syarat untuk masuk area pertandingan.</li>
+	<li>Peserta yang bertanding dibagi menjadi beberapa kelas:
+	<table id="penyisihan">
+	<tr id="headcatur">
+	<td><b>Kelas</b></td>
+	<td><b>Berat (kg)</b></td>
+	</tr>
+	<tr id="colorblue">
+	<td>A</td>
+	<td>48-51,9</td>
+	</tr>
+	<tr id="colorred">
+	<td>B</td>
+	<td>55-57,9</td>
+	</tr>
+	<tr id="colorblue">
+	<td>C</td>
+	<td>60-63,9</td>
+	</tr>
+	<tr id="colorred">
+	<td>D</td>
+	<td>66-69,9</td>
+	</tr>
+	<tr id="colorblue">
+	<td>E</td>
+	<td>72-79,9</td>
+	</tr>
+	<tr id="colorred">
+	<td>BEBAS</td>
+	<td>80+</td>
+	</tr>
+	</table><br>
+	</li>
+	<li>Setiap sekolah hanya diperbolehkan mengirimkan maksimal <b>2 peserta</b> untuk setiap kelasnya, kecuali tuan rumah. Kuota maksimum adalah <b>16 peserta per kelas</b>.</td>
+	<li>Semua peserta wajib <b>menaati dan menghormati</b> segala keputusan wasit. Keputusan wasit bersifat mutlak dan tidak dapat diganggu gugat.</td>
+	<li>Jika peserta melanggar peraturan yang sudah tertera, maka akan diberikan peringatan/teguran, dikenakan sanksi, bahkan didiskualifikasi dari pertandingan.</li>
+	<li>Format pertandingan dapat berganti sewaktu-waktu tergantung jumlah peserta.</li>
+	<li>Informasi lebih lengkap akan dijelaskan saat <i>Technical meeting</i>.</td>
+	</ol><br>
+	<h4>PERATURAN PERTANDINGAN</h4>
+	<ol>
+	<li>Pertandingan akan dilaksanakan sebanyak 3 ronde/babak dengan waktu 2 menit kotor per ronde/babaknya. Dengan jeda setengah menit saat pergantian ronde/babak.</li>
+	<li>Semua peserta wajib menaati dan menghormati segala keputusan wasit, keputusan wasit bersifat bulat dan tidak dapat diganggu gugat.</li>
+	</ol><br>
+	<h4>LAMA PERTANDINGAN</h4>
+	<ol>
+	<li>Pertandingan bola basket menggunakan 4 quarters untuk babak penyisihan dan semifinal yang setiap quarternya berlangsung selama 10 menit (waktu kotor) dengan masa istirahat selama 1 menit diantara quarter.</li>
+	<li>Jadwal dan teknis pertandingan akan dijelaskan saat <i>Technical meeting</i>.</li>
+	<li>Peraturan yang berlaku adalah peraturan yang telah ditetapkan oleh <b>IPSI (Ikatan Pencak Silat Indonesia).</b><br><a href="https://drive.google.com/file/d/1Va4N1vy1fp2AAkM4RDKGWnhPwfcB1n35/view?usp=drivesdk" style="color:white">Peraturan pertandingan selengkapnya dapat dilihat di sini.</a></li>
+	<li>Bagian tubuh yang tidak boleh diserang saat pertandingan pencak silat berlangsung adalah: area leher ke atas (termasuk kepala), kemaluan.</li>
+	<li>Bagian tubuh yang boleh diserang saat pertandingan pencak silat berlangsung adalah: dada, perut, pinggang kiri dan kanan, punggung, tangan, dan kaki.</li>
+	<li>Pertandingan akan dinilai secara objektif dengan kriteria yang sudah ditentukan oleh juri dan panitia.</li>
+	<li>Tidak ada toleransi berat badan.</li>
+	<li>Penimbangan dilakukan 15 (lima belas) menit sebelum peserta yang bersangkutan mengikuti pertandingan sesuai dengan jadwal yang ditentukan.</li>
+	<li>Untuk penimbangan, peserta harus berpakaian Pencak Silat yang digunakan untuk bertanding, kering, tanpa sabuk, tanpa pelindung kemaluan dan pelindung sendi.</li>
+	<li>Pesilat yang tidak dapat memenuhi ketentuan berat badan dalam penimbangan menurut kelas yang diikutinya, dikenakan sanksi diskualifikasi.</li>
+	<li>Penimbangan hanya dilakukan satu kali dan harus disaksikan oleh kedua official.</li>
+	<li>Petugas penimbangan ditunjuk dan ditugaskan oleh Panitia.</li>
+	<li>Setiap peserta harus membawa surat keterangan sehat yang sah yaitu surat keterangan sehat yang dikeluarkan oleh dokter instansi Rumah Sakit/puskesmas yang berwenang (maksimal 1 minggu sebelum pelaksanaan pertandingan).</li>
+	<li>Apabila sebelum pertandingan dimulai pesilat tidak dapat menunjukkan surat keterangan kesehatan akan dikenakan diskualifikasi.</li>
+	</ol>
+	</div>
+	<p id="gapm"></p>
+{% endblock %}

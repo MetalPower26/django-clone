@@ -1,0 +1,237 @@
+{% extends "index\base.html" %}
+{% block head %}
+{% endblock %}
+{% load static %}
+{% block title %} English Debate | CC Cup {% endblock %}
+{% block content %}
+	<p id="gap"></p>
+	<div id="exp">
+	<img src="{% static 'index/img/expand.png' %}" id="cpexpand">
+	<div id="opsiexpand">
+	<table id="layoutexp">
+	<tr>
+	<td colspan=2>Adhi</td>
+	<td><a href="https://wa.me/6285219067007"><img src="{% static 'index/img/iconwa.png' %}" id="cpicon"></a></td>
+	<td id="idline"><img src="{% static 'index/img/line.png' %}" id="cpicon"><div id="ket">adhi_n_p</div></td>
+	</tr>
+	<tr>
+	<td colspan=2>Daniel</td>
+	<td><a href="https://wa.me/6285776639710"><img src="{% static 'index/img/iconwa.png' %}" id="cpicon"></a></td>
+	<td id="idline"><img src="{% static 'index/img/line.png' %}" id="cpicon"><div id="ket">obscurolucem</div></td>
+	</tr>
+	</table>
+	</div>
+	</div>
+	<h3>ATURAN ENGLISH DEBATE</h3>
+	<p id="judul">ATURAN ENGLISH DEBATE</p>
+	<p id="gap"></p>
+	<div id="materi">
+	<h4>PERATURAN UMUM</h4>
+	<ol>
+	<li>Sekolah adalah institusi pendidikan tingkat atas setara SMA (Sekolah Menengah Atas), SMK (Sekolah Menengah Kejuruan), MA (Madrasah Aliyah), atau lainnya yang sederajat.</li>
+	<li>Peserta adalah murid dari sekolah yang duduk di kelas X (sepuluh), XI (sebelas), dan/atau XII (dua belas).</li>
+	<li>Waiting list adalah daftar tunggu bagi sekolah yang ingin mengirimkan peserta lebih banyak dari jumlah yang telah ditentukan, dan diurutkan dari sekolah yang pertama kali mendaftar demikian seterusnya.</li>
+	<li>Kuota adalah jumlah peserta perlombaan yaitu maksimal sejumlah 16 tim dan minimal sejumlah 8 tim</li>
+	<li>Peserta tim adalah kumpulan dari 3 (tiga) anggota individu yang berasal dari sekolah perwakilan yang sama.</li>
+	<li>Point of Information (POI) adalah pemberian interupsi kepada peserta tim lawan saat debat berlangsung.</li>
+	<li>Case Building adalah proses persiapan yang merupakan hak setiap peserta selama 30 menit sebelum debat berlangsung.</li>
+	<li>Adjudicator adalah pihak yang berkompeten menentukan siapa pemenang dari setiap perdebatan yang keputusannya tidak bisa diganggu gugat.</li>
+	<li>Peraturan dan jadwal dapat diganti oleh pihak panitia, menyesuaikan dengan situasi. Peserta berhak diberitahukan mengenai perubahan tersebut.</li>
+	</ol><br>
+	<h4>KETENTUAN PESERTA</h4>
+	<ol>
+	<li>Peserta adalah murid SMA/MA/sederajat yang pada tanggal pelaksanaan CC Cup 2022 belum mencapai atau sama dengan usia 19 tahun dan belum pernah berpartisipasi dalam National School Debate Competition (NSDC) dan/atau perlombaan debat bertingkat internasional.</li>
+	<li>Peserta harus mengatasnamakan pihak sekolah di mana yang bersangkutan bersekolah.</li>
+	<li>Setiap sekolah hanya diperbolehkan mengirim maksimal 2 (dua) perwakilan tim untuk mengikuti perlombaan.</li>
+	<li>Tim kedua pada pasal 2 butir 3 akan dimasukkan pada daftar tunggu (<i>waiting list</i>).</li>
+	<li>Jika jumlah tim yang mendaftar kurang dari kuota, maka akan dilengkapi dengan peserta yang telah masuk dalam daftar waiting list sesuai dengan urutan pendaftaran. Pihak panitia akan menghubungi perwakilan sekolah jika tim tersebut menjadi peserta perlombaan.</li>
+	<li>Peserta tim wajib menyelesaikan seluruh kelengkapan administrasi sebelum atau pada saat Technical Meeting berlangsung.</li>
+	<li>Peserta tim wajib hadir dalam minimal 30 (tiga puluh) menit sebelum perlombaan berlangsung.</li>
+	<li>Peserta berhak mendapatkan fasilitas berupa 1 (satu) orang Liaison Officer yang akan membantu hal-hal teknis selama debat berlangsung.</li>
+	<li>Seluruh identitas yang diberikan peserta adalah data yang jujur. Semua data yang diminta panitia hanya untuk kelengkapan administrasi dan akan menjadi milik panitia.</li>
+	<li>Uang Walk Out akan dikembalikan secara penuh jika:
+	<ol type="a">
+	<li>Peserta tidak didiskualifikasi</li>
+	<li>Peserta hadir di seluruh rangkaian perlombaan</li>
+	</ol>
+	</li>
+	</ol><br>
+	<h4>PERATURAN PERLOMBAAN</h4>
+	<ol>
+	<li>Perlombaan menggunakan Gaya Parlemen Asia ( Asian Parliamentary Style)</li>
+	<li>Perlombaan terdiri dari babak penyisihan ( Preliminary ) sejumlah 3 (tiga) ronde yang akan dibagi dalam 2 time slot; babak perdelapan final sejumlah 1 (satu) ronde; babak semi final sejumlah 1 (satu) ronde; dan babak final sejumlah 1 (satu) ronde.</li>
+	<li>Pertandingan debat dilaksanakan antara 2 (dua) tim yaitu pihak pemerintah (<i>Government Side</i>) dan pihak oposisi (<i>Opposition Side</i>)</li>
+	<li>Perlombaan menggunakan Bahasa Inggris sebagai Bahasa pengantar</li>
+	</ol><br>
+	<h4>PERSIAPAN DEBAT</h4>
+	<ol>
+	<li>Motion yang digunakan bersifat debatable dan ditentukan oleh pihak panitia. Mosi bersifat <i>impromptu</i> dan akan diberitahukan pada saat pembacaan mosi (motion launch)</li>
+	<li>Penentuan lawan peserta tim dilakukan dengan mekanisme:
+	<ol type="a">
+	<li>Pada babak Preliminary 1 dilakukan secara random dan tidak dimungkinkan kepada peserta tim dari sekolah yang sama bertemu.</li>
+	<li>Pada babak Preliminary 2 dan 3 dilakukan dengan melihat victory point dan team score.</li>
+	<li>Pada babak perdelapan final dilakukan dengan melihat <i>team score</i> dari setiap peserta tim yang menang pada setiap ruang dimana peserta tim dengan <i>team score</i> tertinggi akan dipasangkan dengan peserta dengan <i>team score</i> terendah, peserta tim dengan <i>team score</i> tertinggi kedua akan dipasangkan dengan tim dengan <i>team score</i> terendah kedua dan seterusnya.</li>
+	<li>Pada babak perempat final dilakukan dengan melihat <i>team score</i> hasil perdelapan final dari setiap peserta tim yang menang pada setiap ruang dimana peserta tim dengan <i>team score</i> tertinggi akan dipasangkan dengan peserta tim dengan <i>team score</i> terendah, peserta tim dengan <i>team score</i> tertinggi kedua dipasangkan dengan peserta tim dengan <i>team score</i> terendah kedua dan seterusnya.</li>
+	<li>Pada babak semifinal dilakukan dengan melihat <i>team score</i> hasil perempat final dari setiap peserta tim yang menang pada setiap ruang dimana peserta tim dengan <i>team score</i> tertinggi akan dipasangkan dengan peserta tim dengan <i>team score</i> terendah, peserta tim dengan <i>team score</i> tertinggi kedua dipasangkan dengan peserta tim dengan <i>team score</i> terendah kedua.</li>
+	<li>Pada babak final dilakukan dengan memasangkan peserta pemenang pada setiap ruang.</li>
+	</ol>
+	</li>
+	<li>Setiap peserta tim dapat diposisikan sebagai pihak <i>government</i> ataupun pihak <i>opposition</i> sesuai dengan kebijakan dari <i>Chief Adjudicator</i>.</li>
+	<li>Peserta berhak mengajukan keberatan jika sudah 3 (tiga) kali diposisikan di pihak yang sama selama babak preliminary.</li>
+	<li>Mosi yang diberikan pada setiap ronde sejumlah 3 (tiga) buah dalam tema besar (reference) yang sama.</li>
+	<li>Setiap tim berhak menyampaikan preferensi mosi dengan bantuan dari Liaison Officer masing-masing tim. Preferensi mosi dengan ketentuan :
+	<ol type="a">
+	<li>Angka 1 (satu) untuk mosi yang menjadi preferensi utama</li>
+	<li>Angka 2 (dua) untuk mosi yang bukan merupakan preferensi utama, tetapi masih bisa untuk dipertandingkan</li>
+	<li>Angka 3 (tiga) untuk mosi yang tidak akan digunakan pada ronde.</li>
+	</ol>
+	</li>
+	<li>Pihak LO peserta tim dengan LO peserta tim lawan akan menentukan mosi yang akan digunakan pada saat ronde tersebut.</li>
+	<li>Case building dilaksanakan selama 30 (tiga puluh) menit. Peserta tidak diperbolehkan menggunakan alat elektronik ( handphone, laptop, kalkulator) dan printed material apapun ke area case building.</li>
+	<li>Peserta tim dan anggota individu menitipkan hal-hal yang disebutkan pada pasal 4 butir 8 kepada LO dan dikembalikan setelah pertandingan.</li>
+	<li>Hanya peserta tim bersama panitia dan LO bersangkutan yang boleh berada di area case building.</li>
+	<li>Pembagian tempat case building diatur dengan ketentuan sebagai  berikut :
+	<ol type="a">
+	<li>Tim <i>government</i> akan ditempatkan di dalam ruangan debat.</li>
+	<li>Tim <i>opposition</i> akan ditempatkan diluar ruangan debat. Jika tim yang menjadi pihak <i>opposition</i> merasa keberatan dengan situasi yang ada diluar ruangan debat, maka peserta berhak mengajukan permintaan untuk melakukan case building di dalam <i>debaters hall</i>.</li>
+	</ol>
+	</li>
+	</ol><br>
+	<h4>TEKNIS PERTANDINGAN</h4>
+	<ol>
+	<li>Setiap anggota individu mendapat kesempatan berbicara 1 (satu) kali sesuai urutan sebagai berikut :<br>
+	<img src="{% static 'index/img/baganengdeb1.png' %}" id="bagan">
+	</li>
+	<li>Setiap anggota individu mendapat kesempatan berbicara selama 7 menit 20 detik.</li>
+	<li>Khusus untuk Reply Speech akan mendapat kesempatan berbicara selama 4 menit 20 detik dan harus disampaikan oleh anggota individu selain Government Whip maupun Opposition Whip.</li>
+	<li>Liasion officer memberikan tanda waktu terhitung sejak peserta mulai berbicara dengan ketentuan sebagai berikut :
+	<ol type="a">
+	<li>Untuk 1<sup>st</sup>, 2<sup>nd</sup>, dan 3<sup>rd</sup> speakares masing-masing tim :
+	<ul>
+	<li>Ketukan 1 (satu) kali untuk 1 (satu) menit waktu berbicara</li>
+	<li>Ketukan 2 (dua) kali untuk 6 (enam) menit waktu berbicara</li>
+	<li>Ketukan 3 (tiga) kali untuk 7 (tujuh) menit waktu berbicara</li>
+	<li>Ketukan berulang-ulang untuk 7 (tujuh) menit 20 (dua puluh) detik waktu berbicara</li>
+	</ul>
+	</li>
+	<li>Untuk reply speech :
+	<ul>
+	<li>Ketukan 1 (satu) kali untuk 1 (satu) menit waktu berbicara</li>
+	<li>Ketukan 2 (dua) kali untuk 4 (empat) menit waktu berbicara</li>
+	<li>Ketukan berulang kali untuk 4 (empat) menit 20 (dua puluh) detik waktu berbicara</li>
+	</ul>
+	</li>
+	</ol>
+	</li>
+	<li>Anggota individu diperbolehkan memberikan tanda waktu kepada anggota individu dari tim yang bersangkutan.</li>
+	<li>Point of Information disampaikan oleh peserta tim kepada pihak lawan pada saat pihak lawan berbicara di podium di antara menit kedua dan keenam (1:00-5:59). Anggota individu lawan berhak menerima atau menolak Point of Information.</li>
+	<li>Point of Information disampaikan selama 15 detik dan berisi permintaan peserta tim untuk meminta kejelasan atau mengklarifikasi argument atau data dari peserta tim lawan.</li>
+	<li>Point of Information tidak boleh diajukan pada saat reply speech dan menit pertama speech.</li>
+	<li>Peserta tidak diperbolehkan menggunakan kata-kata yang bersifat kasar dan mengandung SARA sebagai alat untuk menghina peserta tim lawan.</li>
+	</ol><br>
+	<h4>PELANGGARAN</h4>
+	<ol>
+	<li>Seluruh pelanggaran yang dilakukan oleh anggota individu atau peserta tim akan dipertimbangkan oleh panitia penyelenggaraan untuk pemberian sanksi.</li>
+	<li>Sanksi yang diberikan dapat berupa :
+	<ol type="a">
+	<li>Teguran, yang dapat diberikan oleh panitia penyelenggara, guru, ataupun adjudicator.</li>
+	<li>Diskualifikasi dari kompetisi, diberikan oleh panitia penyelenggara terhadap pelanggaran-pelanggaran yang dianggap berat oleh panitia yang diindikasikan kuat bertujuan untuk melakukan kecurangan (pasal 2 butir 1 tentang penipuan peserta, pasal 2 butir 9 tentang pemalsuan data, dan sebagainya). Panitia berhak melakukan investigasi atas kecurangan tersebut.</li>
+	</ol>
+	</li>
+	</ol><br>
+	<h4>JADWAL PERLOMBAAN</h4>
+	<table id="penyisihan">
+	<tr id="xtabel1">
+	<td>No</td><td>Hari, tanggal</td><td>Waktu</td><td>Babak</td><td>Keterangan</td><td>Tempat</td>
+	</tr>
+	<tr>
+	<td id="xtabel">1</td><td rowspan=8 id="jeda">Sabtu, 5 November 2022</td><td id="jeda">13:40-14:00</td><td rowspan=13 id="jeda">Prelim</td><td id="colorblue">Pembacaan topik, posisi, dll</td><td id="colorblue">Ruang Tunggu</td>
+	</tr>
+	<tr>
+	<td id="xtabel">2</td><td id="jeda">14:00-14:30</td><td id="colorblue">Casebuild</td><td rowspan=3 id="colorblue">Ruang kelas lt. 2</td>
+	</tr>
+	<tr>
+	<td id="xtabel">3</td><td id="jeda">14:30-15:30</td><td id="colorblue">Debat prelim 1</td>
+	</tr>
+	<tr>
+	<td id="xtabel">4</td><td id="jeda">15:30-15:50</td><td id="colorblue">Ajudication</td>
+	</tr>
+	<tr>
+	<td id="xtabel">5</td><td id="jeda">15:50-16:00</td><td id="colorblue">Pembacaan topik, posisi, dll</td><td id="colorblue">Ruang Tunggu</td>
+	</tr>
+	<tr>
+	<td id="xtabel">6</td><td id="jeda">16:00-16:30</td><td id="colorred">Casebuild</td><td id="colorred" rowspan=3>Ruang kelas lt. 2</td>
+	</tr>
+	<tr>
+	<td id="xtabel">7</td><td id="jeda">16:30-17:30</td><td id="colorred">Debat prelim 2</td>
+	</tr>
+	<tr>
+	<td id="xtabel">8</td><td id="jeda">16:30-17:30</td><td id="colorred">Ajudication</td>
+	</tr>
+	<tr>
+	<td id="xtabel">9</td><td rowspan=5 id="jeda">Senin, 7 November 2022</td><td id="jeda">15:00-15:10</td><td id="colorred">Pembacaan topik, posisi, dll</td><td id="colorred">Ruang Tunggu</td>
+	</tr>
+	<tr>
+	<td id="xtabel">10</td><td id="jeda">15:10-15:40</td><td id="colorblue">Casebuild</td><td id="colorblue" rowspan=3>Ruang kelas lt. 2</td>
+	</tr>
+	<tr>
+	<td id="xtabel">11</td><td id="jeda">15:40-16:40</td><td id="colorblue">Debat prelim 3</td>
+	</tr>
+	<tr>
+	<td id="xtabel">12</td><td id="jeda">16:40-17:00</td><td id="colorblue">Jeda</td>
+	</tr>
+	<tr id="jeda">
+	<td id="xtabel">13</td><td>17:00-17:10</td><td>Breaking Announcement</td><td>Ruang Tunggu</td>
+	</tr>
+	<tr>
+	<td id="xtabel">14</td><td rowspan=9 id="jeda">Rabu, 9 November 2022</td><td id="jeda">14:30-14:40</td><td rowspan=5 id="jeda">Quarterfinals</td><td id="colorblue">Pembacaan topik, posisi, dll</td><td id="colorblue">Ruang Tunggu</td>
+	</tr>
+	<tr>
+	<td id="xtabel">15</td><td id="jeda">14:40-15:10</td><td id="colorblue">Casebuild</td><td id="colorblue" rowspan=2>Ruang Tunggu</td>
+	</tr>
+	<tr>
+	<td id="xtabel">16</td><td id="jeda">15:10-16:10</td><td id="colorblue">Quaterfinals</td> 
+	</tr>
+	<tr>
+	<td id="xtabel">17</td><td id="jeda">16:10-16:20</td><td id="colorblue">Jeda</td> <td id="colorblue">-</td>
+	</tr>
+	<tr id="jeda">
+	<td id="xtabel">18</td><td>16:20-16:30</td><td>Breaking Announcement dan Motion Launch</td><td>Ruang Tunggu</td>
+	</tr>
+	<tr>
+	<td id="xtabel">19</td><td id="jeda">16:30-17:00</td><td rowspan=4 id="jeda">Semifinals</td><td id="colorred">Casebuild</td><td id="colorred" rowspan=3>Ruang kelas lt. 2</td>
+	</tr>
+	<tr>
+	<td id="xtabel">20</td><td id="jeda">17:00-18:00</td><td id="colorred">Semifinals</td> 
+	</tr>
+	<tr>
+	<td id="xtabel">21</td><td id="jeda">18:00-18:10</td><td id="colorred">Deliberasi</td>
+	</tr>
+	<tr id="jeda">
+	<td id="xtabel">22</td><td>18:10-18:20</td><td>Breaking Announcement dan Motion Launch</td><td>Ruang Tunggu</td>
+	</tr>
+	<tr>
+	<td id="xtabel">23</td><td rowspan=7 id="jeda">Jumat, 11 November 2022</td><td id="jeda">14:30-14:40</td><td rowspan=4 id="jeda">Perebutan Juara 3</td><td id="colorblue">Pembacaan topik, posisi, dll</td><td id="colorblue" rowspan=3>Ruang kelas lt. 2</td>
+	</tr>
+	<tr>
+	<td id="xtabel">24</td><td id="jeda">14:40-15:10</td><td id="colorblue">Casebuild</td>
+	</tr>
+	<tr>
+	<td id="xtabel">25</td><td id="jeda">15:10-16:10</td><td id="colorblue">Perebutan juara 3</td>
+	</tr>
+	<tr>
+	<td id="xtabel">26</td><td id="jeda">16:10-16:20</td><td id="colorblue">Jeda</td><td id="colorblue">-</td>
+	</tr>
+	<tr>
+	<td id="xtabel">27</td><td id="jeda">16:20-16:30</td><td rowspan=3 id="jeda">Grandfinal</td><td id="colorred">Pembacaan topik, posisi, dll</td><td id="colorred" rowspan=3>Ruang kelas lt. 2</td>
+	</tr>
+	<tr>
+	<td id="xtabel">28</td><td id="jeda">16:30-17:00</td><td id="colorred">Casebuild</td> 
+	</tr>
+	<tr>
+	<td id="xtabel">29</td><td id="jeda">17:00-18:00</td><td id="colorred">Grandfinal</td>
+	</tr>
+	</table>
+	</div>
+	<p id="gapm"></p>
+{% endblock %}
